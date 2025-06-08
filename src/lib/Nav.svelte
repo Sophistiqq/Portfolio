@@ -11,7 +11,7 @@
   </nav>
 
   <button type="button" class="hire-btn">
-    <CirclePlus /> Hire Me
+    <CirclePlus /> Hire Me?
   </button>
 </header>
 
@@ -27,6 +27,9 @@
     .nav {
       display: flex;
       gap: 1rem;
+      & > a {
+        color: black;
+      }
     }
   }
   .hire-btn {

@@ -2,7 +2,14 @@
   import Nav from "../lib/Nav.svelte";
   import Preview from "../lib/Preview.svelte";
   import Projects from "../lib/Projects.svelte";
-  import { Github, Send } from "lucide-svelte";
+  import avatar from "../assets/Avatar.jpg";
+  import { Github, Send, Dot } from "lucide-svelte";
+
+  type Project = "CDCS" | "iTrack" | "JobTrackR";
+  let selected: Project = $state("CDCS");
+  function selectProject(project: Project) {
+    selected = project;
+  }
 </script>
 
 <main>
@@ -11,6 +18,7 @@
     <div class="summary">
       <div class="header">
         <span>Software Developer</span>
+        <Dot color="gray" size="24" />
         <p class="availability">AVAILABLE FOR WORK</p>
       </div>
 
@@ -31,7 +39,7 @@
           </div>
         </div>
         <div class="avatar">
-          <img src="http://github.com/Sophistiqq.png" alt="Sophistiqq" />
+          <img src={avatar} alt="Sophistiqq" />
         </div>
       </div>
 
@@ -42,7 +50,8 @@
   </div>
 
   <div class="preview">
-    <Preview />
+    <Preview {selectProject} />
+    {selected}
   </div>
 </main>
 
@@ -63,8 +72,7 @@
     min-width: 500px;
     width: 40vw;
     max-width: 45vw;
-    gap: 0.5rem;
-
+    gap: 1rem;
     & > div {
       box-shadow: 5px 10px 15px 0px rgba(0, 0, 0, 0.2);
     }
@@ -82,14 +90,15 @@
   @media screen and (max-width: 768px) {
     main {
       flex-direction: column;
+      overflow-y: scroll;
     }
   }
   .summary {
     background: white;
-    padding: 1rem;
     border-radius: 0.5rem;
     .header {
       display: flex;
+      padding: 0.5rem 1rem;
       font-weight: bold;
       align-items: center;
       .availability {
@@ -111,6 +120,7 @@
     align-items: center;
     width: 100%;
     margin-top: 0.25rem;
+    padding-inline: 1rem;
     .texts {
       display: flex;
       flex-direction: column;
@@ -127,6 +137,7 @@
         a {
           display: flex;
           align-items: center;
+          font-weight: bold;
           gap: 0.25rem;
           color: white;
           font-size: 12px;
