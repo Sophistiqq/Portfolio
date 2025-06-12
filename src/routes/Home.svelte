@@ -75,6 +75,7 @@ main {
   /* height: 100vh; */
   /* min-height: 100vh; */
   padding: 1rem;
+  width: 100vw;
   gap: 1rem;
 }
 .intro {
@@ -105,6 +106,10 @@ main {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    padding: 1rem;
+    .intro, .preview {
+      min-width: 90vw;
+    }
   }
 }
 .summary {

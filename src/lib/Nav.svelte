@@ -53,4 +53,9 @@ import { link } from "svelte-spa-router";
       background: hsl(0, 0%, 20%);
     }
   }
+@media screen and (max-width: 768px) {
+    header {
+      min-width: 100%;
+    }
+  }
 </style>
