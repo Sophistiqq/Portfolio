@@ -1,44 +1,50 @@
 <script lang="ts">
-  import { Dot, ArrowRight, ChevronRight } from "lucide-svelte";
-  import { link } from "svelte-spa-router";
-  // import { onMount } from "svelte";
-  //
-  // onMount(async () => {
-  //   const res = await fetch("https://api.github.com/users/Sophistiqq/repos");
-  //   let repos = [];
-  //   if (res.ok) {
-  //     repos = await res.json();
-  //     console.log(repos);
-  //   } else {
-  //     console.log("Failed");
-  //   }
-  // });
+import { Dot, ArrowRight, ChevronRight } from "lucide-svelte";
+import { link } from "svelte-spa-router";
+let { selectProject } = $props();
+// import { onMount } from "svelte";
+//
+// onMount(async () => {
+//   const res = await fetch("https://api.github.com/users/Sophistiqq/repos");
+//   let repos = [];
+//   if (res.ok) {
+//     repos = await res.json();
+//     console.log(repos);
+//   } else {
+//     console.log("Failed");
+//   }
+// });
+type Project = "CDCS" | "iTrack" | "JobTrackR";
 
-  const projects: {
-    title: string;
-    info: string;
-    link: string;
-    icon: string;
-  }[] = [
-    {
-      title: "Cross-Device Clipboard Sync",
-      info: "Personal Tool, Application, PWA",
-      link: "https://cdcs-clipboard.vercel.app/",
-      icon: "https://cdcs-clipboard.vercel.app/favicon.svg",
-    },
-    {
-      title: "iTrack",
-      info: "Vehicle Tracker, Web App",
-      link: "https://itrack-v1.vercel.app/",
-      icon: "https://itrack-v1.vercel.app/vite.svg",
-    },
-    {
-      title: "JobTrackR",
-      info: "NLP, Notes, Web App",
-      link: "https://jobtrackr-nu.vercel.app",
-      icon: "https://itrack-v1.vercel.app/vite.svg",
-    },
-  ];
+const projects: {
+	title: string;
+	info: string;
+	link: string;
+	icon: string;
+	project: Project;
+}[] = [
+	{
+		title: "Cross-Device Clipboard Sync",
+		info: "Personal Tool, Application, PWA",
+		link: "https://cdcs-clipboard.vercel.app/",
+		icon: "https://cdcs-clipboard.vercel.app/favicon.svg",
+		project: "CDCS",
+	},
+	{
+		title: "iTrack",
+		info: "Vehicle Tracker, Web App",
+		link: "https://itrack-v1.vercel.app/",
+		icon: "https://itrack-v1.vercel.app/vite.svg",
+		project: "iTrack",
+	},
+	{
+		title: "JobTrackR",
+		info: "NLP, Notes, Web App",
+		link: "https://jobtrackr-nu.vercel.app",
+		icon: "https://itrack-v1.vercel.app/vite.svg",
+		project: "JobTrackR",
+	},
+];
 </script>
 
 <div class="container">
@@ -52,7 +58,9 @@
 
   <div class="projects-list">
     {#each projects as project}
-      <div class="project">
+      <!-- svelte-ignore a11y_click_events_have_key_events -->
+      <!-- svelte-ignore a11y_no_static_element_interactions -->
+      <div class="project" onclick={() => selectProject(`${project.project}`)}>
         <img src={project.icon} alt="" />
         <div class="project-info">
           <p class="title">{project.title}</p>
@@ -60,7 +68,7 @@
         </div>
 
         <a href={project.link} target="_blank">
-          <ChevronRight size="14" color="gray" />
+          <ChevronRight size="16" color="gray" />
         </a>
       </div>
     {/each}
@@ -112,8 +120,8 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-block: 1rem;
-    gap: 1rem;
+    padding-block: 1rem .25rem;
+    gap: .5rem;
     .project {
       display: flex;
       align-items: center;
