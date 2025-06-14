@@ -13,7 +13,7 @@ const { showHire, show_hire } = $props();
 
   <button type="button" class="hire-btn" onclick={showHire} >
     <CirclePlus size="18" /> 
-    {#if show_hire == true}
+    {#if show_hire == false}
       Hire Me?
     {:else}
       Back
@@ -53,6 +53,7 @@ const { showHire, show_hire } = $props();
     align-items: center;
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
+    font-size: 90%;
     transition: all 0.25s ease-in-out;
     cursor: pointer;
     &:hover {

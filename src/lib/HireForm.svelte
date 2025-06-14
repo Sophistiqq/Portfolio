@@ -40,7 +40,7 @@ import { slide } from "svelte/transition";
       background-color: black;
       color: white;
       width: 100%;
-      padding: .5rem;
+      padding: .75rem;
       border: none;
       margin-top: 1rem;
       border-radius: .5rem;
@@ -59,6 +59,7 @@ import { slide } from "svelte/transition";
       margin-top: 1rem;
       textarea {
         grid-column: span 2;
+        field-sizing: content;
       }
 
       & > * {
