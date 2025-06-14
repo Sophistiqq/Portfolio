@@ -19,7 +19,10 @@
     "vite": "^6.3.5"
   },
   "dependencies": {
+    "@fontsource/manrope": "^5.2.6",
     "@fontsource/montserrat": "^5.2.6",
+    "@fontsource/nunito": "^5.2.6",
+    "@fontsource/nunito-sans": "^5.2.6",
     "lucide-svelte": "^0.513.0",
     "svelte-spa-router": "^4.0.1"
   }

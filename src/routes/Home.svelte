@@ -1,20 +1,27 @@
 <script lang="ts">
-import { Dot, Github, Send, Facebook, Instagram } from "lucide-svelte";
+import { Dot, Facebook, Github, Instagram, Send } from "lucide-svelte";
 import avatar from "../assets/Avatar.jpg";
+import HireForm from "../lib/HireForm.svelte";
 import Nav from "../lib/Nav.svelte";
 import Preview from "../lib/Preview.svelte";
 import Projects from "../lib/Projects.svelte";
+
 import { slide } from "svelte/transition";
 type Project = "CDCS" | "iTrack" | "JobTrackR";
 let selected: Project = $state("CDCS");
 function selectProject(project: Project) {
 	selected = project;
 }
+let show_hire = $state(false);
+export function showHire() {
+	show_hire = !show_hire;
+}
 </script>
 
 <main>
   <div class="intro" in:slide={{ axis: 'y', delay: 500}}>
-    <Nav />
+    <Nav {showHire} {show_hire} />
+
     <div class="summary">
       <div class="header">
         <span>Software Developer</span>
@@ -61,9 +68,12 @@ function selectProject(project: Project) {
       </a>
     </div>
   </div>
-
   <div class="preview" in:slide={{axis:"y", delay: 500}}>
+  {#if show_hire === false }
     <Preview  {selected} />
+  {:else}
+    <HireForm />
+  {/if}
   </div>
 </main>
 
@@ -72,8 +82,6 @@ main {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  /* height: 100vh; */
-  /* min-height: 100vh; */
   padding: 1rem;
   width: 100vw;
   gap: 1rem;
@@ -115,6 +123,7 @@ main {
 .summary {
   background: white;
   border-radius: 0.5rem;
+  padding-top: .5rem;
   .header {
     display: flex;
     padding: 0.5rem 1rem;

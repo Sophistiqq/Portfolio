@@ -1,6 +1,7 @@
 <script lang="ts">
 import { Home, UserCircle, Library, CirclePlus } from "lucide-svelte";
 import { link } from "svelte-spa-router";
+const { showHire, show_hire } = $props();
 </script>
 
 <header>
@@ -10,8 +11,13 @@ import { link } from "svelte-spa-router";
     <a href="/projects" use:link><Library /></a>
   </nav>
 
-  <button type="button" class="hire-btn">
-    <CirclePlus /> Hire Me?
+  <button type="button" class="hire-btn" onclick={showHire} >
+    <CirclePlus size="18" /> 
+    {#if show_hire == true}
+      Hire Me?
+    {:else}
+      Back
+    {/if}
   </button>
 </header>
 
@@ -47,7 +53,7 @@ import { link } from "svelte-spa-router";
     align-items: center;
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
-    transition: background 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
     cursor: pointer;
     &:hover {
       background: hsl(0, 0%, 20%);

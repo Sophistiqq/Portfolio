@@ -1,6 +1,6 @@
 <script lang="ts">
 const { selected } = $props();
-import { fly } from "svelte/transition";
+import { fly, slide } from "svelte/transition";
 import { ArrowRight } from "lucide-svelte";
 type Project = {
 	client: string;
@@ -48,6 +48,7 @@ const projects: Project[] = [
 	},
 ];
 </script>
+  <div class="project-container" in:slide>
 {#if selected === "CDCS"}
   {@render project(projects[0])}
 {:else if selected === "iTrack"}
@@ -55,9 +56,9 @@ const projects: Project[] = [
 {:else if selected === "JobTrackR"}
   {@render project(projects[2])}
 {/if}
+</div>
 
 {#snippet project(project: Project)}
-  <div class="project-container" in:fly>
     <div class="summary">
       <div class="info">
         <span>Client:</span> <span>{project.client}</span>
@@ -78,7 +79,6 @@ const projects: Project[] = [
 
       <img src={project.image} alt={project.title} id="mock">
     </div>
-  </div>
 {/snippet}
 
 <style>
@@ -135,7 +135,7 @@ const projects: Project[] = [
     border-radius: 100%;
   }
   #mock {
-    width: 70%;
+    width: 100%;
     background: hsl(0, 0%, 95%);
     border-radius: .5rem;
     margin: auto;

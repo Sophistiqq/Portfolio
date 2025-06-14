@@ -1,7 +1,7 @@
 <script lang="ts">
 import { Dot, ArrowRight, ChevronRight } from "lucide-svelte";
 import { link } from "svelte-spa-router";
-let { selectProject } = $props();
+const { selectProject } = $props();
 // import { onMount } from "svelte";
 //
 // onMount(async () => {
@@ -110,7 +110,7 @@ const projects: {
         transition: background 0.2s ease-in-out;
 
         &:hover {
-          background: hsl(0, 0%, 85%);
+          background: hsl(0, 0%, 20%);
         }
       }
     }
@@ -132,6 +132,10 @@ const projects: {
       border-radius: 0.5rem;
       box-shadow: 1px 1px 5px 1px lightgray;
       cursor: pointer;
+
+      &:hover {
+        background-color: hsl(0, 0%, 92.5%);
+      }
       img {
         width: 30px;
         border-radius: 100%;
