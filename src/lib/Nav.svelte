@@ -11,7 +11,7 @@ const { showHire, show_hire } = $props();
     <a href="/projects" use:link><Library /></a>
   </nav>
 
-  <button type="button" class="hire-btn" onclick={showHire} >
+  <button type="button" class="hire-btn" onclick={() => { window.scroll({top: 1000, behavior: "smooth"}); showHire();}} >
     <CirclePlus size="18" /> 
     {#if show_hire == false}
       Hire Me?

@@ -11,6 +11,7 @@ type Project = "CDCS" | "iTrack" | "JobTrackR";
 let selected: Project = $state("CDCS");
 function selectProject(project: Project) {
 	selected = project;
+	window.scroll({ top: 1000, behavior: "smooth" });
 }
 let show_hire = $state(false);
 export function showHire() {
