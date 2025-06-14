@@ -70,6 +70,7 @@ import { slide } from "svelte/transition";
         border: 1px solid transparent;
         transition: border .5s ease;
         font-size: 80%;
+        min-width: 0;
         &:focus {
           border: 1px solid black;
         }
