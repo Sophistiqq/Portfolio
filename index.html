@@ -34,27 +34,30 @@
 
     <section class="work wrap section" id="work" aria-labelledby="work-title">
       <div class="section-heading"><div><span class="eyebrow">01 / SELECTED WORK</span><h2 id="work-title">Built for a reason.</h2></div><p>Applications and systems that solve<br class="desktop-break"> problems I’ve come across.</p></div>
-      <article class="project featured">
+      <article class="project featured moments-featured">
+        <a class="project-art moments-art moments-cover" href="./moments.html" aria-label="Explore Moments, a shared photo and video journal">
+          <div class="art-topline"><span>MOMENTS</span><span>THE LITTLE THINGS</span></div>
+          <div class="memory-composition" aria-hidden="true">
+            <div class="memory-card back-card"><div class="memory-photo meal-photo"></div></div>
+            <div class="memory-card front-card"><div class="memory-photo coffee-photo"></div></div>
+            <svg class="memory-heart" viewBox="0 0 32 32"><path d="M16 28 3.6 15.6C-4 8 7-3 16 6c9-9 20 2 12.4 9.6Z"/></svg>
+          </div>
+          <div class="art-caption"><span>01 — SHARED MEMORIES</span><span>TAKE A CLOSER LOOK ↗</span></div>
+        </a>
+        <div class="project-copy"><div class="project-meta"><span>PHOTO JOURNAL / PWA</span><span>01</span></div><h3><a href="./moments.html">Moments</a></h3><p class="project-lede">A home for the little things, together.</p><p>A photo and video journal for two, bringing shared memories into a timeline and a map. Built to make saving a moment as natural as sharing a photo from your phone.</p><ul class="tags" aria-label="Moments technologies"><li>SvelteKit</li><li>Supabase</li><li>Web Share Target</li></ul><a class="text-link" href="./moments.html">Discover Moments <span aria-hidden="true">↗</span></a></div>
+      </article>
+      <div class="project-grid">
+        <article class="project">
         <div class="project-art attendance-art" role="img" aria-label="Illustrated DTRCam workflow: capture attendance, save locally, and sync when connected. This is a feature overview, not an application screenshot.">
           <div class="art-topline"><span>DTRCAM</span><span>ATTENDANCE, SIMPLIFIED</span></div>
           <div class="attendance-visual">
             <div class="camera-frame"><span class="camera-cross">+</span><div class="person-head"></div><div class="person-shoulders"></div><span class="camera-label">PHOTO ATTENDANCE</span></div>
             <div class="capture-ticket"><span class="ticket-icon">✓</span><div><strong>Keep the day moving.</strong><span>Capture. Save. Sync.</span></div><div class="ticket-line"></div><span class="ticket-note">Built for intermittent connections</span></div>
           </div>
-          <div class="art-caption"><span>01 — FEATURE OVERVIEW</span><span>WEB APPLICATION ↗</span></div>
+          <div class="art-caption"><span>02 — FEATURE OVERVIEW</span><span>WEB APPLICATION ↗</span></div>
         </div>
-        <div class="project-copy"><div class="project-meta"><span>WEB APP / SELF-HOSTED</span><span>01</span></div><h3>DTRCam</h3><p class="project-lede">Attendance that keeps up with the workday.</p><p>A camera-based attendance application with local capture and a queue for syncing records when connectivity returns. Built with SvelteKit and deployed with Docker.</p><ul class="tags" aria-label="DTRCam technologies"><li>SvelteKit</li><li>Supabase</li><li>Docker</li></ul><a class="text-link" href="https://github.com/Sophistiqq/DTRCam">Explore the project <span aria-hidden="true">↗</span></a></div>
+        <div class="project-copy"><div class="project-meta"><span>WEB APP / SELF-HOSTED</span><span>02</span></div><h3>DTRCam</h3><p class="project-lede">Attendance that keeps up with the workday.</p><p>A camera-based attendance application with local capture and a queue for syncing records when connectivity returns. Built with SvelteKit and deployed with Docker.</p><ul class="tags" aria-label="DTRCam technologies"><li>SvelteKit</li><li>Supabase</li><li>Docker</li></ul><a class="text-link" href="https://github.com/Sophistiqq/DTRCam">Explore the project <span aria-hidden="true">↗</span></a></div>
       </article>
-
-      <div class="project-grid">
-        <article class="project">
-          <div class="project-art moments-art" role="img" aria-label="Abstract illustration of moments connected to places, representing Momi's photo journal. Not an application screenshot.">
-            <div class="art-topline"><span>MOMI</span><span>THE LITTLE THINGS</span></div>
-            <div class="memory-composition"><div class="memory-card back-card"><div class="landscape landscape-green"></div><span>A place to remember.</span></div><div class="memory-card front-card"><div class="landscape landscape-peach"><span class="sun"></span></div><span>Better, together. <span>♡</span></span></div><div class="map-pin" aria-hidden="true">♡</div></div>
-            <div class="art-caption"><span>02 — PROJECT ILLUSTRATION</span><span>PERSONAL PROJECT ↗</span></div>
-          </div>
-          <div class="project-copy"><div class="project-meta"><span>PHOTO JOURNAL / PWA</span><span>02</span></div><h3>Momi</h3><p class="project-lede">A home for shared memories.</p><p>A two-person photo and video journal with a shared feed, location map, and comments. Designed to accept media straight from Android’s share menu.</p><ul class="tags" aria-label="Momi technologies"><li>SvelteKit</li><li>Supabase</li><li>Web Share Target</li></ul><a class="text-link" href="https://github.com/Sophistiqq/Momi">Explore the project <span aria-hidden="true">↗</span></a></div>
-        </article>
         <article class="project">
           <div class="project-art infra-art" role="img" aria-label="Infrastructure overview: Linux hosts Docker services, with Caddy routing requests to applications and automation services.">
             <div class="art-topline"><span>SERVERINFRA</span><span>BEHIND THE SCENES</span></div>
@@ -74,6 +77,6 @@
 
     <section class="contact wrap section" id="contact" aria-labelledby="contact-title"><span class="eyebrow">03 / GET IN TOUCH</span><div class="contact-heading"><h2 id="contact-title">Have something<br>in <span class="serif">mind?</span></h2><a class="contact-arrow" href="mailto:roi.for.work@gmail.com" aria-label="Email Roi"><span aria-hidden="true">↗</span></a></div><div class="contact-bottom"><p>For work opportunities, a project idea,<br>or a conversation about building things.</p><div class="email-row"><a class="email-link" href="mailto:roi.for.work@gmail.com">roi.for.work@gmail.com</a><button id="copy-email" type="button" hidden>Copy email</button><span class="copy-status" id="copy-status" role="status"></span></div></div></section>
   </main>
-  <footer class="wrap"><a class="wordmark" href="#home" aria-label="Back to top">roi<span>.</span></a><span>© <span id="year">2026</span> Roi Borromeo</span><div><a href="https://github.com/Sophistiqq">GitHub ↗</a><a href="https://github.com/Sophistiqq/portfolio-v2">Site source ↗</a></div><a href="#home">Back to top ↑</a></footer>
+  <footer class="wrap"><a class="wordmark" href="#home" aria-label="Back to top">roi<span>.</span></a><span>© <span id="year">2026</span> Roi Borromeo</span><div><a href="https://github.com/Sophistiqq">GitHub ↗</a><a href="https://github.com/Sophistiqq/Portfolio">Site source ↗</a></div><a href="#home">Back to top ↑</a></footer>
 </body>
 </html>

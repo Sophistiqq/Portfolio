@@ -1,10 +1,10 @@
 const year = document.getElementById('year');
-year.textContent = String(new Date().getFullYear());
+if (year) year.textContent = String(new Date().getFullYear());
 
 const copyButton = document.getElementById('copy-email');
 const copyStatus = document.getElementById('copy-status');
 
-if (window.isSecureContext && navigator.clipboard?.writeText) {
+if (copyButton && copyStatus && window.isSecureContext && navigator.clipboard?.writeText) {
   copyButton.hidden = false;
   copyButton.addEventListener('click', async () => {
     try {

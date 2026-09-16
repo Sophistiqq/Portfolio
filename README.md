@@ -13,13 +13,13 @@ Run `python3 -m http.server 8000` from this directory and open `http://localhost
 - `script.js`: current year and optional clipboard support.
 - `static/favicon.svg`: site icon.
 
-The project visuals are labeled illustrations and feature overviews, not product screenshots. Replace them with sanitized real screenshots when available. Older screenshots remain in `static/` but are not loaded by the page.
+Moments is the first featured project and links to `moments.html`. Its cover uses two photo cards and a pink-red heart. The detail page includes a presentation mockup with sample content and an accessible native-dialog lightbox. DTRCam and ServerInfra retain labeled feature illustrations. Older screenshots remain in `static/` but are not loaded by the page.
 
 Keep project claims grounded in the linked repositories. Momi is presented as a personal project; it is not advertised as a publicly available service. The portfolio has no resume download until a verified resume URL is supplied.
 
 ## Deployment
 
-GitHub Actions deploys this directory to GitHub Pages on pushes to `modernize`. Review changes on a separate branch and merge only when ready to update the live site. Relative asset paths support deployment under `/portfolio-v2/`.
+GitHub Actions deploys this directory to GitHub Pages on pushes to `modernize`. Review changes on a separate branch and merge only when ready to update the live site. Relative asset paths support deployment under `/Portfolio/`.
 
 ## Accessibility
 
