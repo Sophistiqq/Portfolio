@@ -13,7 +13,7 @@ Run `python3 -m http.server 8000` from this directory and open `http://localhost
 - `script.js`: current year and optional clipboard support.
 - `static/favicon.svg`: site icon.
 
-Moments is the first featured project and links to `moments.html`. Its cover uses two photo cards and a pink-red heart. The detail page includes a presentation mockup with sample content and an accessible native-dialog lightbox. DTRCam and ServerInfra retain labeled feature illustrations. Older screenshots remain in `static/` but are not loaded by the page.
+Moments is the first featured project and links to `moments.html`. Its cover uses two photo cards and a pink-red heart. The detail page includes a presentation mockup with sample content and an accessible native-dialog lightbox. DTRCam uses an optimized WebP mockup with sample personal details and a click-to-enlarge dialog. ServerInfra retains its labeled feature illustration. Older screenshots remain in `static/` but are not loaded by the page.
 
 Keep project claims grounded in the linked repositories. Momi is presented as a personal project; it is not advertised as a publicly available service. The portfolio has no resume download until a verified resume URL is supplied.
 
