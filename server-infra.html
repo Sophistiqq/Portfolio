@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Server Infrastructure by Roi Borromeo: reproducible Docker Compose services behind a Caddy reverse proxy." />
+        <meta name="theme-color" content="#f4f3ed" />
+        <title>Server Infrastructure — Roi Borromeo</title>
+        <link rel="icon" href="./static/favicon.svg" type="image/svg+xml" />
+        <link rel="stylesheet" href="./styles.css" />
+        <script src="./script.js" defer></script>
+    </head>
+    <body>
+        <a class="skip-link" href="#main">Skip to content</a>
+        <header class="site-header wrap"><a class="wordmark" href="./index.html" aria-label="Roi Borromeo, home">roi<span>.</span></a><nav aria-label="Main navigation"><a href="./index.html#work">Work</a><a href="./index.html#about">About</a><a class="nav-contact" href="mailto:roi.for.work@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a></nav></header>
+        <main id="main">
+            <section class="case-hero wrap" aria-labelledby="infra-title">
+                <a class="back-link" href="./index.html#work">← All projects</a>
+                <div class="case-heading">
+                    <div><span class="eyebrow">INFRASTRUCTURE / SELF-HOSTED SERVICES</span><h1 id="infra-title">Beyond<br />localhost<span class="infra-period">.</span></h1><p class="case-tagline">Explicit. Repeatable.<br /><span class="serif">Easy to understand.</span></p></div>
+                    <p class="case-intro">A small Linux server running independently managed services. Docker Compose makes each service clear; Caddy gives them one dependable way in.</p>
+                </div>
+                <dl class="project-facts"><div><dt>THE IDEA</dt><dd>Simple operational infrastructure</dd></div><div><dt>MY WORK</dt><dd>Setup, docs &amp; service deployment</dd></div><div><dt>BUILT WITH</dt><dd>Arch Linux · Docker · Caddy</dd></div><div><dt>EXPLORE</dt><dd><a href="https://github.com/fri-mis-enterprise/ServerInfra">Source on GitHub ↗</a></dd></div></dl>
+            </section>
+            <section class="wrap infra-diagram" aria-label="Server infrastructure overview">
+                <div class="infra-diagram-header"><span>SERVER INFRASTRUCTURE</span><span>ONE WAY IN. INDEPENDENT SERVICES.</span></div>
+                <div class="infra-flow"><div class="flow-client">Browser<br /><small>Local network</small></div><span class="flow-arrow">→</span><div class="flow-proxy"><strong>Caddy</strong><small>Reverse proxy</small><i></i></div><span class="flow-arrow">→</span><div class="flow-services"><div><b>n8n</b><small>Workflows</small></div><div><b>DTRCam</b><small>Attendance</small></div><div><b>More services</b><small>As needed</small></div></div></div>
+                <div class="infra-base"><span>ARCH LINUX</span><span>DOCKER ENGINE · DOCKER COMPOSE · GIT</span></div>
+            </section>
+            <section class="wrap section case-story" aria-labelledby="infra-problem-title"><div><span class="eyebrow">01 / THE APPROACH</span><h2 id="infra-problem-title">No platform<br />to <span class="serif">hide behind.</span></h2></div><div><p class="large-copy">The point was not to add another management layer. It was to understand and operate the system underneath.</p><p>The server runs Arch Linux with Docker and Docker Compose. Each application sits in its own directory and Compose project, so it can be started, updated, backed up, or troubleshot without affecting the rest.</p><p>That tradeoff keeps the environment small enough to inspect, but structured enough to grow one service at a time.</p></div></section>
+            <section class="case-features infra-features" aria-labelledby="infra-features-title"><div class="wrap section"><div class="section-heading"><div><span class="eyebrow">02 / THE SETUP</span><h2 id="infra-features-title">A few good<br />boundaries.</h2></div><p>Small conventions that make a server<br />less mysterious to operate.</p></div><div class="feature-grid"><article><span class="feature-symbol" aria-hidden="true">◫</span><h3>Independent services</h3><p>Each application owns its Compose file and documentation. A change to one service does not require bringing every other service down with it.</p></article><article><span class="feature-symbol" aria-hidden="true">↗</span><h3>One shared entry point</h3><p>Caddy routes requests to services through a shared Docker network, keeping internal service ports private where direct access is unnecessary.</p></article><article><span class="feature-symbol" aria-hidden="true">▣</span><h3>Configuration worth keeping</h3><p>Infrastructure configuration is version-controlled with Git, while secrets remain out of the repository and service-specific setup stays documented beside each service.</p></article></div></div></section>
+            <section class="wrap section case-story" aria-labelledby="infra-build-title"><div><span class="eyebrow">03 / OPERATING IT</span><h2 id="infra-build-title">Build it.<br /><span class="serif">Then keep it useful.</span></h2><a class="text-link case-source" href="https://github.com/fri-mis-enterprise/ServerInfra">Browse the setup <span aria-hidden="true">↗</span></a></div><div class="build-notes"><article><h3>Service discovery and routing</h3><p>Services that need HTTP access join an external Docker network. Caddy can reach them by Compose service name, so containers communicate directly rather than looping back through the server’s LAN address.</p></article><article><h3>Practical automation</h3><p>n8n handles recurring operational work such as backups. The value is not just a scheduled job—it is an executable workflow that can be inspected and improved over time.</p></article><article><h3>Documented maintenance</h3><p>Each service is meant to carry enough local documentation to be operated later: required environment values, volumes, networks, proxy routes, update steps, and troubleshooting notes.</p></article><p class="platform-note">This page describes the design and operating conventions behind the infrastructure. It intentionally does not expose service credentials, internal addresses, or operational secrets.</p></div></section>
+            <section class="wrap case-ending"><span class="eyebrow">MORE FROM THE WORKBENCH</span><h2>Different problems.<br />The same <span class="serif">curiosity.</span></h2><a class="button dark-button" href="./index.html#work">Back to selected work <span aria-hidden="true">↗</span></a></section>
+        </main>
+        <footer class="wrap"><a class="wordmark" href="./index.html" aria-label="Roi Borromeo, home">roi<span>.</span></a><span>© <span id="year">2026</span> Roi Borromeo</span><div><a href="https://github.com/Sophistiqq">GitHub ↗</a><a href="https://github.com/Sophistiqq/Portfolio">Site source ↗</a></div><a href="#main">Back to top ↑</a></footer>
+    </body>
+</html>

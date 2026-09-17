@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="DTRCam by Roi Borromeo: a camera-based attendance and verification system with employee and admin workflows."
+        />
+        <meta name="theme-color" content="#f4f3ed" />
+        <title>DTRCam — Roi Borromeo</title>
+        <link rel="icon" href="./static/favicon.svg" type="image/svg+xml" />
+        <link rel="stylesheet" href="./styles.css" />
+        <script src="./script.js" defer></script>
+        <script src="./moments.js" defer></script>
+    </head>
+    <body>
+        <a class="skip-link" href="#main">Skip to content</a>
+        <header class="site-header wrap">
+            <a class="wordmark" href="./index.html" aria-label="Roi Borromeo, home">roi<span>.</span></a>
+            <nav aria-label="Main navigation">
+                <a href="./index.html#work">Work</a>
+                <a href="./index.html#about">About</a>
+                <a class="nav-contact" href="mailto:roi.for.work@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a>
+            </nav>
+        </header>
+        <main id="main">
+            <section class="case-hero wrap" aria-labelledby="dtrcam-title">
+                <a class="back-link" href="./index.html#work">← All projects</a>
+                <div class="case-heading">
+                    <div>
+                        <span class="eyebrow">WEB APPLICATION / ATTENDANCE &amp; VERIFICATION</span>
+                        <h1 id="dtrcam-title">DTRCam<span class="dtr-mark">●</span></h1>
+                        <p class="case-tagline">Attendance that keeps up<br /><span class="serif">with the workday.</span></p>
+                    </div>
+                    <p class="case-intro">DTRCam keeps the attendance flow focused: employees record a time-in or time-out, while administrators can review punch records and manage the people behind them.</p>
+                </div>
+                <dl class="project-facts">
+                    <div><dt>THE IDEA</dt><dd>Make daily attendance practical</dd></div>
+                    <div><dt>MY WORK</dt><dd>Interface, API &amp; deployment</dd></div>
+                    <div><dt>BUILT WITH</dt><dd>SvelteKit · Supabase · Docker</dd></div>
+                    <div><dt>EXPLORE</dt><dd><a href="https://github.com/Sophistiqq/DTRCam">Source on GitHub ↗</a></dd></div>
+                </dl>
+            </section>
+            <figure class="showcase wrap dtr-showcase">
+                <a class="showcase-link" href="./static/dtrcam-showcase.webp" data-lightbox aria-label="Enlarge the DTRCam presentation mockup">
+                    <img src="./static/dtrcam-showcase.webp" width="1536" height="1024" alt="DTRCam sign-in, employee attendance, and administrator overview on three phones. Sample content only." fetchpriority="high" />
+                    <span class="enlarge-label" aria-hidden="true">View larger ↗</span>
+                </a>
+                <figcaption>Employee and administrator views · Presentation mockup with sample content</figcaption>
+            </figure>
+            <section class="wrap section case-story" aria-labelledby="problem-title">
+                <div><span class="eyebrow">01 / THE PROBLEM</span><h2 id="problem-title">A task that should feel<br /><span class="serif">uneventful.</span></h2></div>
+                <div>
+                    <p class="large-copy">Attendance should fit into a workday—not ask people to work around it.</p>
+                    <p>DTRCam is designed around a narrow, repeatable flow: sign in, select the right attendance action, and capture the record. The employee-facing view stays straightforward while the admin area gives the team a clearer place to review activity.</p>
+                    <p>The project also considers what happens beyond the ideal connection: records can be kept locally and synchronized when the application is able to reach the server again.</p>
+                </div>
+            </section>
+            <section class="case-features dtr-features" aria-labelledby="dtr-features-title">
+                <div class="wrap section">
+                    <div class="section-heading"><div><span class="eyebrow">02 / THE EXPERIENCE</span><h2 id="dtr-features-title">One clear action.<br />A useful record.</h2></div><p>Built around the everyday employee<br />and the person reviewing the data.</p></div>
+                    <div class="feature-grid">
+                        <article><span class="feature-symbol" aria-hidden="true">↪</span><h3>Time in, time out</h3><p>Employees have an uncomplicated view for recording arrival or departure, including a camera-based attendance flow.</p></article>
+                        <article><span class="feature-symbol" aria-hidden="true">◷</span><h3>Records to review</h3><p>Punch history gives administrators a dedicated place to inspect attendance entries and follow up on exceptions.</p></article>
+                        <article><span class="feature-symbol" aria-hidden="true">⌁</span><h3>Built for real connectivity</h3><p>Local capture and a sync queue help preserve attendance records when the network connection is temporarily unavailable.</p></article>
+                    </div>
+                </div>
+            </section>
+            <section class="wrap section case-story" aria-labelledby="dtr-build-title">
+                <div><span class="eyebrow">03 / BEHIND THE APPLICATION</span><h2 id="dtr-build-title">An application is more<br />than <span class="serif">the happy path.</span></h2><a class="text-link case-source" href="https://github.com/Sophistiqq/DTRCam">Browse the code <span aria-hidden="true">↗</span></a></div>
+                <div class="build-notes">
+                    <article><h3>Web application, mobile-first</h3><p>SvelteKit provides the interface and routes, with the layout designed to be comfortable to use from a phone. Supabase supports the application’s data and authentication needs.</p></article>
+                    <article><h3>Keeping records resilient</h3><p>An IndexedDB-backed queue holds locally captured records until the application can synchronize them. The aim is simple: a temporary network problem should not lose someone’s attendance record.</p></article>
+                    <article><h3>Deployment that stays understandable</h3><p>The project can run through a Docker build and Compose setup, with environment values kept outside the source repository. It is exposed on the local network through a Caddy reverse-proxy route.</p></article>
+                    <p class="platform-note">The screens above use generated sample names, locations, and profile images. They illustrate the application’s workflow, not real employee data.</p>
+                </div>
+            </section>
+            <section class="wrap case-ending"><span class="eyebrow">MORE FROM THE WORKBENCH</span><h2>Different problems.<br />The same <span class="serif">curiosity.</span></h2><a class="button dark-button" href="./index.html#work">Back to selected work <span aria-hidden="true">↗</span></a></section>
+        </main>
+        <dialog class="image-dialog" aria-labelledby="image-title"><div class="dialog-toolbar"><span id="image-title">DTRCam — presentation mockup with sample content</span><button type="button" class="close-dialog" aria-label="Close enlarged image" autofocus>Close ×</button></div><img src="./static/dtrcam-showcase.webp" width="1536" height="1024" alt="Enlarged DTRCam presentation mockup." /></dialog>
+        <footer class="wrap"><a class="wordmark" href="./index.html" aria-label="Roi Borromeo, home">roi<span>.</span></a><span>© <span id="year">2026</span> Roi Borromeo</span><div><a href="https://github.com/Sophistiqq">GitHub ↗</a><a href="https://github.com/Sophistiqq/Portfolio">Site source ↗</a></div><a href="#main">Back to top ↑</a></footer>
+    </body>
+</html>
