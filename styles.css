@@ -1450,7 +1450,7 @@ body:has(.image-dialog[open]) {
     }
 }
 
-/* Animated project covers. DTRCam uses a raster camera; motion stays in CSS. */
+/* Animated project covers. DTRCam is a portfolio-native graphic camera. */
 .project-art.dtr-camera-cover {
     height: auto;
     min-height: 330px;
@@ -1458,49 +1458,102 @@ body:has(.image-dialog[open]) {
     aspect-ratio: 3 / 2;
     display: block;
     isolation: isolate;
-    background: #141412;
+    background:
+        radial-gradient(circle at 50% 47%, #f9f2de 0 19%, transparent 20%),
+        linear-gradient(135deg, #efd7c8, #f6eadf 53%, #dfc6b7);
 }
-.dtr-camera-cover img {
+.dtr-camera-cover::before,
+.dtr-camera-cover::after {
     position: absolute;
-    z-index: 1;
-    width: 106%;
-    max-width: none;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    inset: 0 auto auto -3%;
-    transition: transform 480ms cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-.dtr-camera-halo {
-    position: absolute;
-    z-index: 0;
-    width: 54%;
-    aspect-ratio: 1;
-    top: 21%;
-    left: 23%;
+    border: 1px solid rgba(94, 72, 59, 0.13);
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(240, 239, 57, 0.32), transparent 66%);
-    filter: blur(12px);
-    opacity: 0.25;
-    transition: opacity 300ms ease, transform 500ms ease;
+    content: "";
+    pointer-events: none;
 }
-.dtr-focus {
+.dtr-camera-cover::before {
+    top: 46px;
+    left: calc(50% - 114px);
+    width: 228px;
+    height: 228px;
+}
+.dtr-camera-cover::after {
+    top: 77px;
+    left: calc(50% - 83px);
+    width: 166px;
+    height: 166px;
+}
+.dtr-camera {
     position: absolute;
     z-index: 2;
-    inset: 21% 33%;
-    border: 1px solid rgba(240, 239, 57, 0.5);
-    border-radius: 5px;
-    opacity: 0;
-    transform: scale(0.88);
+    top: 88px;
+    left: 50%;
+    width: 205px;
+    height: 145px;
+    transform: translateX(-50%);
+    transition: transform 450ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-.dtr-flash {
+.dtr-camera-top {
     position: absolute;
-    z-index: 3;
-    inset: 0;
-    pointer-events: none;
-    background: #fffdeb;
-    mix-blend-mode: screen;
+    top: 0;
+    left: 28px;
+    width: 58px;
+    height: 20px;
+    border: 3px solid #3d4a39;
+    border-bottom: 0;
+    border-radius: 9px 9px 0 0;
+    background: #e2a57d;
+}
+.dtr-camera-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 122px;
+    border: 3px solid #3d4a39;
+    border-radius: 22px;
+    background: #526648;
+    box-shadow: 8px 8px 0 rgba(61, 74, 57, 0.12);
+}
+.dtr-camera-body::before {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #f0ef39;
+    box-shadow: 0 0 0 4px rgba(240, 239, 57, 0.14);
+    content: "";
+}
+.dtr-lens {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 78px;
+    height: 78px;
+    border: 3px solid #3d4a39;
+    border-radius: 50%;
+    background: #f2d7b9;
+    transform: translate(-50%, -50%);
+}
+.dtr-lens-glass {
+    position: absolute;
+    inset: 13px;
+    border: 3px solid #3d4a39;
+    border-radius: 50%;
+    background: #df8d72;
+}
+.dtr-lens-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #f0ef39;
+    border-radius: 50%;
+    background: rgba(240, 239, 57, 0.35);
     opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2);
 }
 .dtr-camera-cover .art-caption {
     position: absolute;
@@ -1508,8 +1561,7 @@ body:has(.image-dialog[open]) {
     right: 16px;
     bottom: 14px;
     left: 16px;
-    color: #f7f4e9;
-    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.8);
+    color: #5f4a40;
 }
 
 /* A soft, warm network pulse—not a literal architecture diagram. */
@@ -1647,14 +1699,16 @@ body:has(.image-dialog[open]) {
     color: #53624d;
 }
 
-@keyframes dtr-capture-flash {
-    0%, 100% { opacity: 0; }
-    12% { opacity: 0.82; }
-    24% { opacity: 0; }
+@keyframes dtr-lens-capture {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.2); }
+    18% { opacity: 0.9; }
+    70% { opacity: 0; transform: translate(-50%, -50%) scale(8); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(8); }
 }
-@keyframes dtr-focus-lock {
-    0%, 100% { opacity: 0; transform: scale(0.88); }
-    12%, 24% { opacity: 1; transform: scale(1); }
+@keyframes dtr-camera-pop {
+    0%, 100% { transform: translateX(-50%) rotate(0); }
+    22% { transform: translateX(-50%) rotate(-1deg) scale(1.02); }
+    44% { transform: translateX(-50%) rotate(0) scale(1); }
 }
 @keyframes infra-orbit-turn {
     to { transform: rotate(1turn); }
@@ -1664,18 +1718,15 @@ body:has(.image-dialog[open]) {
     50% { transform: scale(1.3); opacity: 1; }
 }
 @media (hover: hover) and (pointer: fine) {
-    .dtr-camera-cover:hover img { transform: scale(1.035); }
-    .dtr-camera-cover:hover .dtr-camera-halo { opacity: 0.9; transform: scale(1.14); }
-    .dtr-camera-cover:hover .dtr-flash { animation: dtr-capture-flash 650ms ease-out; }
-    .dtr-camera-cover:hover .dtr-focus { animation: dtr-focus-lock 650ms ease-out; }
+    .dtr-camera-cover:hover .dtr-camera { animation: dtr-camera-pop 1.1s ease-out; }
+    .dtr-camera-cover:hover .dtr-lens-pulse { animation: dtr-lens-capture 1.1s cubic-bezier(0.12, 0.7, 0.2, 1); }
     .infra-motion:hover .infra-orbit-one { animation: infra-orbit-turn 3.2s linear infinite; }
     .infra-motion:hover .infra-orbit-two { animation: infra-orbit-turn 4.8s linear infinite reverse; }
     .infra-motion:hover .infra-signal { animation: infra-packet 1s ease-in-out infinite; }
 }
 @media (hover: none), (pointer: coarse) {
-    .dtr-camera-cover .dtr-flash { animation: dtr-capture-flash 5s ease-out infinite; }
-    .dtr-camera-cover .dtr-focus { animation: dtr-focus-lock 5s ease-out infinite; }
-    .dtr-camera-cover .dtr-camera-halo { animation: dtr-focus-lock 5s ease-out infinite; }
+    .dtr-camera-cover .dtr-camera { animation: dtr-camera-pop 5s ease-out infinite; }
+    .dtr-camera-cover .dtr-lens-pulse { animation: dtr-lens-capture 5s cubic-bezier(0.12, 0.7, 0.2, 1) infinite; }
     .infra-motion .infra-orbit-one { animation: infra-orbit-turn 5s linear infinite; }
     .infra-motion .infra-orbit-two { animation: infra-orbit-turn 5s linear infinite reverse; }
     .infra-motion .infra-signal { animation: infra-packet 5s ease-in-out infinite; }
